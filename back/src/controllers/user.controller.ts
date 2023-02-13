@@ -1,6 +1,6 @@
+import type { IUser } from '~/shared/types';
 import { FilterQuery } from 'mongoose';
 import { UserModel } from '~/database/models';
-import { IUser } from '~/database/models/user.model';
 
 export const UserController = {
   async create(user: IUser) {

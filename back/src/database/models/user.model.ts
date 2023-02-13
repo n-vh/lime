@@ -1,12 +1,5 @@
-import { ObjectId } from 'mongodb';
+import type { IUser } from '~/shared/types';
 import { model, Schema } from 'mongoose';
-
-export interface IUser {
-  _id?: ObjectId;
-  username: string;
-  password: string;
-  email: string;
-}
 
 const schema = new Schema(
   {

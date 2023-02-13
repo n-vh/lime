@@ -2,7 +2,8 @@ import type { FastifyServerOptions } from 'fastify';
 import jwt from '@fastify/jwt';
 import cors from '@fastify/cors';
 import { fastify } from 'fastify';
-import { Database } from './database';
+import { Database } from '~/database';
+import { authRouter } from '~/router/auth';
 
 const initServer = async (opts?: FastifyServerOptions) => {
   const app = fastify(opts);
@@ -16,7 +17,9 @@ const initServer = async (opts?: FastifyServerOptions) => {
   app.register(jwt, {
     secret: import.meta.env.VITE_JWT_SECRET,
   });
-  
+
+  app.register(authRouter);
+
   if (import.meta.env.PROD) {
     try {
       const PORT = 6543;
