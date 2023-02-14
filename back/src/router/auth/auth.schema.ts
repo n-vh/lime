@@ -13,6 +13,6 @@ export const SignInRouteSchema = {
     .prop('password', V.string().required()),
 };
 
-export const VerifyRouteSchema = {
-  params: V.object().prop('email', V.string().format('email').required()),
+export const CheckEmailRouteSchema = {
+  body: V.object().prop('email', V.string().format('email').required()),
 };

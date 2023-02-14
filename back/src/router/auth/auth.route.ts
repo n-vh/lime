@@ -1,7 +1,11 @@
 import type { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import type { IUser } from '~/shared/types';
 import { UserController } from '~/controllers';
-import { SignInRouteSchema, SignUpRouteSchema, VerifyRouteSchema } from './auth.schema';
+import {
+  SignInRouteSchema,
+  SignUpRouteSchema,
+  CheckEmailRouteSchema,
+} from './auth.schema';
 
 type SignUpRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'username' | 'email' | 'password'>;
@@ -11,8 +15,8 @@ type SignInRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'email' | 'password'>;
 }>;
 
-type VerifyRouteRequest = FastifyRequest<{
-  Params: Pick<IUser, 'email'>;
+type CheckEmailRouteRequest = FastifyRequest<{
+  Body: Pick<IUser, 'email'>;
 }>;
 
 export const authRouter: FastifyPluginCallback = (app, opts, next) => {
@@ -68,15 +72,15 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
   });
 
   app.route({
-    url: '/verify/:email',
-    method: 'GET',
-    schema: VerifyRouteSchema,
-    handler: async (req: VerifyRouteRequest, rep) => {
+    url: '/check',
+    method: 'POST',
+    schema: CheckEmailRouteSchema,
+    handler: async (req: CheckEmailRouteRequest, rep) => {
       try {
         // if the user exists send true
         // else throw an error and send false
         await UserController.findOne({
-          email: req.params.email,
+          email: req.body.email,
         });
 
         rep.send(true);
