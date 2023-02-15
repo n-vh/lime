@@ -74,7 +74,7 @@ export function Navbar() {
           </div>
           <input
             type="text"
-            id="search-navbar"
+            id="filter-navbar"
             className=" block w-5 rounded-r-full border-yellow-600 bg-gray-300 p-2 pl-10 text-sm text-black placeholder-black dark:text-black"
             placeholder="Search..."
           />
@@ -102,14 +102,14 @@ export function Navbar() {
             id="user-dropdown"
           >
             <div className="px-4 py-3">
-              <span className="block text-sm dark:text-white">Username</span>
+              <span className="block text-sm dark:text-[#e3ff7d]">Username</span>
               <span className="block truncate text-sm font-medium dark:text-gray-400"></span>
             </div>
             <ul className="py-2" aria-labelledby="user-menu-button">
               <li>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-black dark:hover:bg-gray-200 dark:hover:text-black"
                 >
                   Dashboard
                 </a>
@@ -117,7 +117,7 @@ export function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-black dark:hover:bg-gray-200 dark:hover:text-black"
                 >
                   Settings
                 </a>
@@ -125,7 +125,7 @@ export function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-black dark:hover:bg-gray-200 dark:hover:text-black"
                 >
                   Sign out
                 </a>
@@ -133,21 +133,68 @@ export function Navbar() {
             </ul>
           </div>
         </div>
-        <div className="flex items-center border-black hover:border">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 12 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            className="h-6 w-6"
+
+        <div className="flex items-center md:hidden">
+          <button
+            type="button"
+            className="mr-3 flex rounded-full border border-black md:mr-0"
+            id="user-menu-button"
+            aria-expanded="false"
+            data-dropdown-toggle="user-dropdown"
+            data-dropdown-placement="bottom"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
-            />
-          </svg>
+            <span className="sr-only">Open user menu</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
+              />
+            </svg>
+          </button>
+
+          <div
+            className="z-50 my-4 hidden list-none divide-solid rounded-md dark:divide-gray-400 dark:bg-gray-400"
+            id="user-dropdown"
+          >
+            <div className="px-4 py-3">
+              <span className="block text-sm dark:text-[#e3ff7d]">Username</span>
+              <span className="block truncate text-sm font-medium dark:text-gray-400"></span>
+            </div>
+            <ul className="py-2" aria-labelledby="user-menu-button">
+              <li>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-black dark:hover:bg-gray-200 dark:hover:text-black"
+                >
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-black dark:hover:bg-gray-200 dark:hover:text-black"
+                >
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-black dark:hover:bg-gray-200 dark:hover:text-black"
+                >
+                  Sign out
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
