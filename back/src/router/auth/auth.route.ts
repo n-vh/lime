@@ -86,7 +86,7 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
         // if the user exists send true
         // else throw an error and send false
         await UserController.findOne({
-          email: req.body.email,
+          email: req.body.email.toLowerCase(),
         });
 
         rep.send(true);
