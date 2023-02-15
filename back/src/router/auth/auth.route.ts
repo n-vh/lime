@@ -50,7 +50,7 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
       try {
         // if the user doesn't exist, throw an error
         const user = await UserController.findOne({
-          email: req.body.email,
+          email: req.body.email.toLowerCase(),
         });
 
         // @@@ TODO HASH PASSWORD

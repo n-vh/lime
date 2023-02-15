@@ -1,11 +1,11 @@
+import type { FilterQuery } from 'mongoose';
 import type { IUser } from '~/shared/types';
-import { FilterQuery } from 'mongoose';
 import { UserModel } from '~/database/models';
 
 export const UserController = {
   async create(user: IUser) {
     const doc = await UserModel.findOne({
-      email: user.email,
+      email: user.email.toLowerCase(),
     });
 
     if (doc) {
