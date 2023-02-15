@@ -1,5 +1,6 @@
 import type { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import type { IUser } from '~/shared/types';
+import bcrypt from 'bcrypt-ts';
 import { UserController } from '~/controllers';
 import {
   SignInRouteSchema,
@@ -27,7 +28,10 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
     handler: async (req: SignUpRouteRequest, rep) => {
       try {
         // if the user already exists, throw an error
-        const user = await UserController.create(req.body);
+        const user = await UserController.create({
+          ...req.body,
+          password: await bcrypt.hash(req.body.password, 10),
+        });
 
         // when the user is created, send a Bearer token
         rep.send({
@@ -53,8 +57,10 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
           email: req.body.email.toLowerCase(),
         });
 
-        // @@@ TODO HASH PASSWORD
-        if (user.password !== req.body.password) {
+        const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
+
+        // if the hashed password is invalid, throw an error
+        if (!isPasswordValid) {
           throw new Error('INVALID_CREDENTIALS');
         }
 
