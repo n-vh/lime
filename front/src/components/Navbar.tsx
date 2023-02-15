@@ -5,7 +5,7 @@ export function Navbar() {
   return (
     <nav className="px-4 py-4 backdrop-blur-md sm:px-4">
       <div className="container mx-auto flex flex-wrap ">
-        <a href="" className="flex items-center">
+        <a href="" className="mr-4 flex items-center">
           <svg
             width="66"
             height="18"
@@ -20,40 +20,8 @@ export function Navbar() {
           </svg>
         </a>
 
-        <div className="relative mx-4 hidden md:block">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 40 27"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M31.7224 1.5L17 27L2.27757 1.5L31.7224 1.5Z"
-                fill="#E3FF7D"
-                stroke="#27272A"
-                stroke-width="2"
-              />
-            </svg>
-            <path
-              fill-rule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clip-rule="evenodd"
-            ></path>
-
-            <span className="sr-only">Search icon</span>
-          </div>
-          <input
-            type="text"
-            id="search-navbar"
-            className="block w-full rounded-full p-2 pl-10 text-sm text-black placeholder-black  dark:border-gray-600 dark:bg-gray-300 dark:text-black"
-            placeholder="Filter..."
-          />
-        </div>
-        <div></div>
-        <div className="relative mx-2 ml-auto">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        <div className="relative ml-2">
+          <div className="pointer-events-none absolute inset-y-0 left-0 ml-3 flex items-center">
             <svg
               className="h-5 w-5"
               aria-hidden="true"
@@ -81,25 +49,99 @@ export function Navbar() {
           <input
             type="text"
             id="search-navbar"
-            className=" block w-full rounded-full border-yellow-600 bg-gray-300 p-2 pl-10 text-sm text-black placeholder-black dark:text-black"
+            className=" block w-28 rounded-l-full border-yellow-600 bg-gray-300 p-2 pl-10 text-sm text-black placeholder-black dark:text-black md:w-full"
             placeholder="Search..."
           />
         </div>
 
-        <button
-          type="button"
-          className="mx-2 mr-3 flex rounded-full bg-gray-800 text-sm focus:ring-4 dark:focus:ring-yellow-600"
-          id="user-menu-button"
-          aria-expanded="false"
-          data-dropdown-toggle="user-dropdown"
-          data-dropdown-placement="bottom"
-        >
-          <img
-            className="h-8 w-8 rounded-full"
-            src="./images/placeholder.png"
-            alt="user photo"
+        <div className="relative ml-[1px]">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
+              />
+            </svg>
+
+            <path
+              fill-rule="evenodd"
+              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+              clip-rule="evenodd"
+            ></path>
+
+            <span className="sr-only">Search icon</span>
+          </div>
+          <input
+            type="text"
+            id="search-navbar"
+            className=" block w-5 rounded-r-full border-yellow-600 bg-gray-300 p-2 pl-10 text-sm text-black placeholder-black dark:text-black"
+            placeholder="Search..."
           />
-        </button>
+        </div>
+
+        <div className="ml-auto flex items-center">
+          <button
+            type="button"
+            className="mr-3 flex rounded-full bg-gray-600 text-sm focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-400 md:mr-0"
+            id="user-menu-button"
+            aria-expanded="false"
+            data-dropdown-toggle="user-dropdown"
+            data-dropdown-placement="bottom"
+          >
+            <span className="sr-only">Open user menu</span>
+            <img
+              className="h-8 w-8 rounded-full"
+              src="/images/placeholder.png"
+              alt="user photo"
+            />
+          </button>
+
+          <div
+            className="divide- z-50 my-4 hidden list-none divide-gray-100 rounded-lg bg-white text-base shadow dark:divide-gray-600 dark:bg-gray-700"
+            id="user-dropdown"
+          >
+            <div className="px-4 py-3">
+              <span className="block text-sm text-gray-900 dark:text-white">
+                Username
+              </span>
+              <span className="block truncate text-sm font-medium text-gray-500 dark:text-gray-400"></span>
+            </div>
+            <ul className="py-2" aria-labelledby="user-menu-button">
+              <li>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Sign out
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );
