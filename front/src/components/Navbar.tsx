@@ -1,8 +1,8 @@
 export function Navbar() {
   return (
-    <nav className="px-4 py-4 backdrop-blur-md sm:px-4">
-      <div className="mx-auto flex flex-wrap ">
-        <a href="" className="mr-4 flex content-center items-center">
+    <nav className="  py-4 backdrop-blur-md sm:px-4">
+      <div className="mx-auto flex flex-wrap px-8 ">
+        <a href="" className="flex content-center items-center">
           <svg
             width="66"
             height="18"
@@ -18,7 +18,7 @@ export function Navbar() {
         </a>
 
         <button
-          id="dropdownDefaultButton"
+          id="search-button"
           data-dropdown-toggle="dropdown"
           className=" ml-auto inline-flex items-center rounded-l-full bg-gray-300 px-1"
           type="button"
@@ -33,6 +33,7 @@ export function Navbar() {
           >
             <path strokeWidth="2" d="M19 9l-7 7-7-7"></path>
           </svg>
+          <p className="hidden md:mr-8 md:inline lg:mr-24 xl:mr-32">Search</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -46,7 +47,7 @@ export function Navbar() {
         </button>
 
         <button
-          id="dropdownDefaultButton"
+          id="setting-button"
           data-dropdown-toggle="dropdown"
           className="ml-[1px] inline-flex items-center rounded-r-full bg-gray-300 px-1"
           type="button"
@@ -61,6 +62,7 @@ export function Navbar() {
           >
             <path d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5" />
           </svg>{' '}
+          <p className="hidden md:mr-8 md:inline lg:mr-28 xl:mr-36">Filter</p>
           <svg
             className="ml-2 h-4 w-4"
             aria-hidden="true"
@@ -76,45 +78,7 @@ export function Navbar() {
         <div
           id="dropdown"
           className="z-10 hidden w-44 divide-y rounded-md dark:bg-gray-400"
-        >
-          <ul
-            className="py-2 text-sm text-gray-700 dark:text-black"
-            aria-labelledby="dropdownDefaultButton"
-          >
-            <li>
-              <a
-                href="#"
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                MMORPG
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                FPS
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                RPG
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                MOBA
-              </a>
-            </li>
-          </ul>
-        </div>
+        ></div>
 
         <div className="ml-auto flex items-center">
           <button
