@@ -1,3 +1,6 @@
+import { Search } from './Search';
+import { Filter } from './Filter';
+
 export function Navbar() {
   return (
     <nav className="  py-4 backdrop-blur-md sm:px-4">
@@ -17,63 +20,9 @@ export function Navbar() {
           </svg>
         </a>
 
-        <button
-          id="search-button"
-          data-dropdown-toggle="dropdown"
-          className=" ml-auto inline-flex items-center rounded-l-full bg-gray-300 px-1"
-          type="button"
-        >
-          <svg
-            className="mr-2 ml-[6px] h-4 w-4"
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-          <p className="hidden md:mr-8 md:inline lg:mr-24 xl:mr-32">Search</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className=" h-6 w-6"
-          >
-            <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-          </svg>
-        </button>
+        <Search />
 
-        <button
-          id="setting-button"
-          data-dropdown-toggle="dropdown"
-          className="ml-[1px] inline-flex items-center rounded-r-full bg-gray-300 px-1"
-          type="button"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="h-6 w-6 "
-          >
-            <path d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5" />
-          </svg>{' '}
-          <p className="hidden md:mr-8 md:inline lg:mr-28 xl:mr-36">Filter</p>
-          <svg
-            className="ml-2 mr-[6px] h-4 w-4"
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
+        <Filter />
 
         <div
           id="dropdown"
