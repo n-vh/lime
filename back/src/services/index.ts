@@ -1,1 +1,1 @@
-export { passwordResetService } from './pw-reset.service';
+export { PasswordResetService } from './pw-reset.service';

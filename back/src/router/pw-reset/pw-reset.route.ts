@@ -1,9 +1,8 @@
 import type { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import type { IUser } from '~/shared/types';
-import { UserController } from '~/controllers';
+import { PasswordResetService } from '~/services';
 import { PasswordResetRouterSchema } from './pw-reset.schema';
-import { PasswordResetModel } from '~/database/models';
-import { PasswordResetService } from '~/services/pw-reset.service';
+import { PasswordResetController, UserController } from '~/controllers';
 
 type PasswordResetRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'email'>;
@@ -23,9 +22,9 @@ export const passwordResetRouter: FastifyPluginCallback = (app, opts, next) => {
         const service = new PasswordResetService(app);
         const token = await service.send(user);
 
-        PasswordResetModel.create({
+        await PasswordResetController.create({
           token,
-          userId: user._id,
+          userId: user._id.toString(),
         });
       } catch (e) {
         console.error(e);
