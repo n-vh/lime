@@ -35,13 +35,14 @@ export function Search() {
         </svg>
       </button>
       {isOpen && (
-        <div className="border border-black">
-          <input type="text" placeholder="Search" />
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
+        <div className="absolute top-36 left-8 right-8 h-16 rounded-lg border-2 border-[#e3ff7d] lg:left-72 lg:right-72">
+          <input
+            className="h-full w-full rounded-lg text-center
+
+            backdrop-contrast-50"
+            type="text"
+            placeholder="Search"
+          />
         </div>
       )}
     </>
