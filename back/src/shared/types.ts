@@ -6,3 +6,9 @@ export interface IUser {
   password: string;
   email: string;
 }
+
+export interface IPasswordReset {
+  _id?: ObjectId;
+  userId: string;
+  token: string;
+}
