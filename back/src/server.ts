@@ -3,7 +3,7 @@ import jwt from '@fastify/jwt';
 import cors from '@fastify/cors';
 import { fastify } from 'fastify';
 import { Database } from '~/database';
-import { authRouter, passwordResetRouter } from '~/router';
+import { authRouter, passwordResetRouter, userRouter } from '~/router';
 
 const initServer = async (opts?: FastifyServerOptions) => {
   const app = fastify(opts);
@@ -20,6 +20,7 @@ const initServer = async (opts?: FastifyServerOptions) => {
 
   app.register(authRouter);
   app.register(passwordResetRouter);
+  app.register(userRouter);
 
   if (import.meta.env.PROD) {
     try {

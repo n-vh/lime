@@ -2,11 +2,7 @@ import type { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import type { IUser } from '~/shared/types';
 import bcrypt from 'bcrypt-ts';
 import { UserController } from '~/controllers';
-import {
-  SignInRouteSchema,
-  SignUpRouteSchema,
-  CheckEmailRouteSchema,
-} from './auth.schema';
+import { SignInRouteSchema, SignUpRouteSchema } from './auth.schema';
 
 type SignUpRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'username' | 'email' | 'password'>;
@@ -14,10 +10,6 @@ type SignUpRouteRequest = FastifyRequest<{
 
 type SignInRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'email' | 'password'>;
-}>;
-
-type CheckEmailRouteRequest = FastifyRequest<{
-  Body: Pick<IUser, 'email'>;
 }>;
 
 export const authRouter: FastifyPluginCallback = (app, opts, next) => {
@@ -73,25 +65,6 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
           status: 400,
           error: e.message,
         });
-      }
-    },
-  });
-
-  app.route({
-    url: '/check',
-    method: 'POST',
-    schema: CheckEmailRouteSchema,
-    handler: async (req: CheckEmailRouteRequest, rep) => {
-      try {
-        // if the user exists send true
-        // else throw an error and send false
-        await UserController.findOne({
-          email: req.body.email.toLowerCase(),
-        });
-
-        rep.send(true);
-      } catch (e) {
-        rep.send(false);
       }
     },
   });
