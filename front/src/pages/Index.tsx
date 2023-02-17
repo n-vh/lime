@@ -1,10 +1,15 @@
-import react from 'react';
-import { Footer } from '../components/Footer';
+import { useState } from 'react';
+import { Navbar } from '~/components/Navbar';
+import { Card } from '~/components/Card';
 
-export const Index = () => {
+export function Index() {
+  const [page, setPage] = useState('');
+
   return (
     <>
-      <Footer />
+      <Navbar />
+      <Card />
     </>
   );
-};
+}
+
