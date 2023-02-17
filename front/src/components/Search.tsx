@@ -35,7 +35,7 @@ export function Search() {
         </svg>
       </button>
       {isOpen && (
-        <div className="absolute top-36 left-8 right-8 h-16 rounded-lg border-2 border-[#e3ff7d] backdrop-blur-md lg:left-72 lg:right-72">
+        <div className="z-100 absolute top-36 left-8 right-8 h-16 rounded-lg border-2 border-[#e3ff7d] backdrop-blur-md lg:left-72 lg:right-72">
           <input
             className=" h-full w-full rounded-lg
 
