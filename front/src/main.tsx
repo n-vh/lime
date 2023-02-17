@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Index } from '~/pages/Index';
 import { Navbar } from '~/components/Navbar';
+import { Card } from '~/components/Card';
+import { Sign } from '~/pages/Sign';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route index element={<Index />} />
+        <Route path="/" index element={<Index />} />
+        <Route path="/sign" element={<Sign />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

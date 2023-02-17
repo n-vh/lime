@@ -1,9 +1,14 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Navbar } from '~/components/Navbar';
+import { Card } from '~/components/Card';
 
 export function Index() {
   const [page, setPage] = useState('');
 
-  return <></>;
+  return (
+    <>
+      <Navbar />
+      <Card />
+    </>
+  );
 }
