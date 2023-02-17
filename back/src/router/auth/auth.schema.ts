@@ -12,7 +12,3 @@ export const SignInRouteSchema = {
     .prop('email', V.string().format('email').required())
     .prop('password', V.string().required()),
 };
-
-export const CheckEmailRouteSchema = {
-  body: V.object().prop('email', V.string().format('email').required()),
-};

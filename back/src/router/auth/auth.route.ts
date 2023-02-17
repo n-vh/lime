@@ -1,12 +1,8 @@
 import type { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import type { IUser } from '~/shared/types';
-import bcrypt from 'bcrypt-ts';
 import { UserController } from '~/controllers';
-import {
-  SignInRouteSchema,
-  SignUpRouteSchema,
-  CheckEmailRouteSchema,
-} from './auth.schema';
+import { SignInRouteSchema, SignUpRouteSchema } from './auth.schema';
+import { comparePassword, hashPassword } from '~/utils/password';
 
 type SignUpRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'username' | 'email' | 'password'>;
@@ -14,10 +10,6 @@ type SignUpRouteRequest = FastifyRequest<{
 
 type SignInRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'email' | 'password'>;
-}>;
-
-type CheckEmailRouteRequest = FastifyRequest<{
-  Body: Pick<IUser, 'email'>;
 }>;
 
 export const authRouter: FastifyPluginCallback = (app, opts, next) => {
@@ -30,7 +22,7 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
         // if the user already exists, throw an error
         const user = await UserController.create({
           ...req.body,
-          password: await bcrypt.hash(req.body.password, 10),
+          password: await hashPassword(req.body.password),
         });
 
         // when the user is created, send a Bearer token
@@ -57,7 +49,7 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
           email: req.body.email.toLowerCase(),
         });
 
-        const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
+        const isPasswordValid = await comparePassword(req.body.password, user.password);
 
         // if the hashed password is invalid, throw an error
         if (!isPasswordValid) {
@@ -73,25 +65,6 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
           status: 400,
           error: e.message,
         });
-      }
-    },
-  });
-
-  app.route({
-    url: '/check',
-    method: 'POST',
-    schema: CheckEmailRouteSchema,
-    handler: async (req: CheckEmailRouteRequest, rep) => {
-      try {
-        // if the user exists send true
-        // else throw an error and send false
-        await UserController.findOne({
-          email: req.body.email.toLowerCase(),
-        });
-
-        rep.send(true);
-      } catch (e) {
-        rep.send(false);
       }
     },
   });
