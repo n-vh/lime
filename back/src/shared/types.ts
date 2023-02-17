@@ -10,7 +10,6 @@ export interface IUser {
 
 export interface IMailVerify {
   _id?: ObjectId;
-  userId: string;
   token: string;
   type: MailVerifyType;
 }

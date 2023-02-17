@@ -24,4 +24,20 @@ export const UserController = {
 
     return doc;
   },
+
+  async updateOne(id: string, user: Partial<IUser>) {
+    const document = await UserModel.findOneAndUpdate(
+      {
+        _id: id,
+      },
+      { $set: user },
+      { new: true },
+    );
+
+    if (!document) {
+      throw new Error('USER_NOT_FOUND');
+    }
+
+    return document;
+  },
 };
