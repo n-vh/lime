@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Index } from '~/pages/Index';
-
+import { Forgot } from '~/pages/Forgot';
 import Form from '~/components/Form';
 import Header from '~/components/SignInHeader';
 
@@ -15,17 +15,11 @@ import { Password } from './pages/Password';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-
-      {/* <Header /> */}
-      {/* <Form /> */}
-      {/* <Input /> */}
-      {/* <Navbar /> */}
- 
-
       <Routes>
         <Route path="/" index element={<Index />} />
         <Route path="/sign" element={<Sign />} />
         <Route path="/password" element={<Password />} />
+        <Route path="/forgot" element={<Forgot />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
