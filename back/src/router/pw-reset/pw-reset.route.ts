@@ -4,6 +4,7 @@ import { MailService } from '~/services';
 import { MailVerifyType } from '~/shared/enums';
 import { PasswordResetRouteSchema } from './pw-reset.schema';
 import { MailVerifyController, UserController } from '~/controllers';
+import { hashPassword } from '~/utils/password';
 
 type PasswordResetRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'email'>;
