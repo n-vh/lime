@@ -1,1 +1,1 @@
-export { PasswordResetService } from './pw-reset.service';
+export { MailService } from './mail.service';
