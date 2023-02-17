@@ -1,2 +1,2 @@
-export { PasswordResetModel } from './pw-reset.model';
+export { MailVerifyModel } from './mail.model';
 export { UserModel } from './user.model';

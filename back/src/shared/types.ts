@@ -1,4 +1,5 @@
 import { ObjectId } from 'mongodb';
+import { MailVerifyType } from './enums';
 
 export interface IUser {
   _id?: ObjectId;
@@ -7,8 +8,9 @@ export interface IUser {
   email: string;
 }
 
-export interface IPasswordReset {
+export interface IMailVerify {
   _id?: ObjectId;
   userId: string;
   token: string;
+  type: MailVerifyType;
 }

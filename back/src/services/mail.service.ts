@@ -44,7 +44,7 @@ export class MailService {
     return token;
   }
 
-  public async send(data: MailgunMessageData) {
+  private async send(data: MailgunMessageData) {
     this.client.messages
       .create(import.meta.env.VITE_DOMAIN_NAME, {
         ...data,

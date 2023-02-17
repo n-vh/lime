@@ -1,4 +1,4 @@
-import type { IPasswordReset } from '~/shared/types';
+import type { IMailVerify } from '~/shared/types';
 import { model, Schema } from 'mongoose';
 
 const schema = new Schema(
@@ -11,6 +11,10 @@ const schema = new Schema(
       type: String,
       required: true,
     },
+    type: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
@@ -18,4 +22,4 @@ const schema = new Schema(
   },
 );
 
-export const PasswordResetModel = model<IPasswordReset>('PasswordReset', schema);
+export const MailVerifyModel = model<IMailVerify>('MailVerify', schema);

@@ -1,8 +1,9 @@
 import type { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import type { IUser } from '~/shared/types';
 import { MailService } from '~/services';
+import { MailVerifyType } from '~/shared/enums';
 import { PasswordResetRouteSchema } from './pw-reset.schema';
-import { PasswordResetController, UserController } from '~/controllers';
+import { MailVerifyController, UserController } from '~/controllers';
 
 type PasswordResetRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'email'>;
@@ -22,9 +23,10 @@ export const passwordResetRouter: FastifyPluginCallback = (app, opts, next) => {
         const service = new MailService(app);
         const token = await service.sendPasswordReset(user);
 
-        await PasswordResetController.create({
-          token,
+        await MailVerifyController.create({
           userId: user._id.toString(),
+          token,
+          type: MailVerifyType.PASSWORD_RESET,
         });
       } catch (e) {
         console.error(e);
