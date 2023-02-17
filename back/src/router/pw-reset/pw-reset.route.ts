@@ -28,9 +28,11 @@ export const passwordResetRouter: FastifyPluginCallback = (app, opts, next) => {
           email: req.body.email.toLowerCase(),
         });
 
+        // sends an email with a token
         const service = new MailService(app);
         const token = await service.sendPasswordReset(user);
 
+        // save the token in the database
         await MailVerifyController.create({
           token,
           type: MailVerifyType.PASSWORD_RESET,
@@ -52,18 +54,24 @@ export const passwordResetRouter: FastifyPluginCallback = (app, opts, next) => {
     schema: PasswordResetVerifyRouteSchema,
     handler: async (req: PasswordResetVerifyRouteRequest, rep) => {
       try {
+        // decode the token
         const token = app.jwt.verify(req.body.token);
         const user = token['payload'];
 
+        // check if token is expired
         const dateNow = Math.floor(Date.now() / 1000);
         if (dateNow >= token['exp']) {
           throw new Error('TOKEN_EXPIRED');
         }
 
+        // delete the mail verify token
+        // throws error if token is not found
         await MailVerifyController.deleteOne({
           token: req.body.token,
         });
 
+        // update the user password
+        // throws error if user is not found
         await UserController.updateOne(user._id, {
           password: await hashPassword(req.body.password),
         });
