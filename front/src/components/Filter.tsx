@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ButtonTypes } from './ButtonTypes';
 
 export function Filter() {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,14 +8,24 @@ export function Filter() {
   return (
     <>
       {isOpen && (
-        <div className="absolute top-36 left-8 right-8 h-16 rounded-lg border-2 border-[#e3ff7d] lg:left-72 lg:right-72">
-          <input
+        <div className="absolute top-16 left-12 right-12 h-16">
+          <div
             className="h-full w-full rounded-lg text-center
 
-            backdrop-contrast-50"
+            backdrop-contrast-50 "
             type="text"
             placeholder="Filter"
-          />
+          >
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+          </div>
         </div>
       )}
       <button

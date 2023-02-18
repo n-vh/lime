@@ -21,7 +21,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/password" element={<Password />} />
         <Route path="/forgot" element={<Forgot />} />
       </Routes>
-      <Player />
     </BrowserRouter>
   </React.StrictMode>,
 );
