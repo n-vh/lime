@@ -36,7 +36,7 @@ export function PlayerPage() {
             <img src="./images/like.svg" alt="" className="" />
           </button>{' '}
         </div>
-        <div className="relative mt-8 flex h-8 items-center rounded-2xl border border-black bg-gray-400 pl-4 md:mx-12">
+        <div className="relative mt-8 flex h-8 items-center rounded-2xl bg-gray-400 pl-4 md:mx-12">
           <p className="text-xs text-white">nombre de vues </p>
           <p className="text-xs text-white">date de la diffusion </p>
           <svg
@@ -50,12 +50,12 @@ export function PlayerPage() {
           >
             <path strokeWidth="2" d="M19 9l-7 7-7-7"></path>
           </svg>
-          {isDropdownOpen && (
-            <div className="absolute right-0 top-full z-10 rounded-lg bg-white py-2 px-4 shadow-lg">
-              <p>Hidden text goes here</p>
-            </div>
-          )}
         </div>
+        {isDropdownOpen && (
+          <div className="relative flex h-8 items-center rounded-2xl bg-gray-400 pl-4 md:mx-12">
+            <p className="text-xs text-white">Hidden text goes here</p>
+          </div>
+        )}
       </div>
     </>
   );
