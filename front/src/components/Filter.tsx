@@ -13,18 +13,18 @@ export function Filter() {
             className="h-full w-full rounded-lg text-center
 
             backdrop-contrast-50 "
-            type="text"
             placeholder="Filter"
           >
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
-            <ButtonTypes className="h-8 w-16 bg-gray-400 text-[#e3ff7d]" />
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-4 w-12 bg-black"></button>
           </div>
         </div>
       )}

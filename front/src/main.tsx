@@ -10,6 +10,7 @@ import { Sign } from '~/pages/Sign';
 import { Index } from '~/pages/Index';
 import { Forgot } from '~/pages/Forgot';
 import { Password } from './pages/Password';
+import { PlayerPage } from '~/pages/PlayerPage';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/sign" element={<Sign />} />
         <Route path="/password" element={<Password />} />
         <Route path="/forgot" element={<Forgot />} />
+        <Route path="/player" element={<PlayerPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
