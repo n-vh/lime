@@ -8,23 +8,23 @@ export function Filter() {
   return (
     <>
       {isOpen && (
-        <div className="absolute top-16 left-12 right-12 h-16">
+        <div className="absolute top-16 left-12 right-12 h-8">
           <div
             className="h-full w-full rounded-lg text-center
 
             backdrop-contrast-50 "
             placeholder="Filter"
           >
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
-            <button className="mx-2 h-4 w-12 bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
           </div>
         </div>
       )}
