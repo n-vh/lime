@@ -21,6 +21,26 @@ export class MailService {
     });
   }
 
+  public async sendSignUp(user: IUser) {
+    const { url, token } = this.appendTokenToURL('/signup', user, '24h');
+
+    this.send({
+      to: user.email,
+      subject: 'Lime account signup',
+      text: url,
+      html: `
+        <p>Thank you for signing up with Lime.</p>
+        <p>To confirm your signup, please click on the following link:</p>
+        <p>
+          <a href="${url}">${url}</a>
+        </p>
+        <p>Thank you,<br />The Lime Team</p>
+      `,
+    });
+
+    return token;
+  }
+
   public async sendPasswordReset(user: IUser) {
     const { url, token } = this.appendTokenToURL('/password-reset', user, '24h');
 
