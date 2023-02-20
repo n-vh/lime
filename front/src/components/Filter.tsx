@@ -15,23 +15,31 @@ export function Filter() {
             backdrop-contrast-50 "
             placeholder="Filter"
           >
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
-            <button className="mx-2 h-8 w-12 rounded-full bg-black"></button>
+            <button className=" lg-text-lg mx-2 rounded-full bg-[#e3ff7d] px-4 ">
+              MMORP
+            </button>
+            <button className=" lg-text-lg mx-2 rounded-full bg-[#e3ff7d] px-4 ">
+              MMORP
+            </button>
+            <button className=" lg-text-lg mx-2 rounded-full bg-[#e3ff7d] px-4 ">
+              MMORP
+            </button>
+            <button className=" lg-text-lg mx-2 rounded-full bg-[#e3ff7d] px-4 ">
+              MMORP
+            </button>
+            <button className=" lg-text-lg mx-2 rounded-full bg-[#e3ff7d] px-4 ">
+              MMORP
+            </button>
+            <button className=" lg-text-lg mx-2 rounded-full bg-[#e3ff7d] px-4 ">
+              MMORP
+            </button>
           </div>
         </div>
       )}
       <button
         id="setting-button"
         data-dropdown-toggle="dropdown"
-        className="ml-[1px] inline-flex items-center rounded-r-full bg-gray-300 px-1"
+        className="ml-[1px] inline-flex items-center rounded-r-full bg-gray-200 px-1"
         type="button"
         onClick={togglePopup}
       >

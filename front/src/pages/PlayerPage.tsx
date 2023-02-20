@@ -15,13 +15,12 @@ export function PlayerPage() {
       <div className="h-screen bg-[#27272A]">
         <Navbar />
         <div className="md:my-8 md:px-12 xl:px-80">
-          <Player />
+          <div className="z-0">
+            <Player />
+          </div>
         </div>
         <div>
-          <h1
-            className="block flex-1 text-center text-lg text-white sm:hidden"
-            id="title small screen"
-          >
+          <h1 className="block flex-1 pt-2 text-center text-lg text-white lg:hidden">
             Video Title
           </h1>
         </div>
@@ -35,27 +34,33 @@ export function PlayerPage() {
             <p className="my-1 text-white">Streamer</p>
             <p className="my-1 text-white">number of sub</p>
           </div>
-          <h1
-            className="invisible flex-1 text-center  text-lg text-white sm:visible sm:block"
-            id="title big screen"
-          >
+          <h1 className="invisible flex-1 text-center  text-lg text-white lg:visible lg:block">
             Video Title
           </h1>
-          <div className="justify-end lg:flex">
-            <button className=" flex h-12 w-20 items-center justify-center rounded-2xl border border-white bg-[#27272A]">
-              <img src="./images/like.svg" alt="" className="" />
+
+          <div className="flex justify-end">
+            <button className=" flex h-8 w-12 items-center justify-center rounded-2xl border border-white bg-[#27272A] md:h-12 md:w-20">
+              <img src="./images/like.svg" alt="" className="h-4 md:h-8" />
             </button>
-            <button className=" flex h-12 w-20 items-center justify-center rounded-2xl border border-white bg-[#27272A]">
-              <img src="./images/like.svg" alt="" className="" />
+            <button className=" flex h-8 w-12 items-center justify-center rounded-2xl border border-white bg-[#27272A] md:h-12 md:w-20">
+              <img src="./images/like.svg" alt="" className="h-4 md:h-8" />
             </button>
           </div>
         </div>
         <div
-          className="relative mt-8 flex h-8 items-center rounded-2xl bg-gray-400 pl-4 md:mx-12"
+          className="mt-8 flex h-8 items-center rounded-2xl bg-gray-300 pl-4 md:mx-12"
           onClick={handleDropdownClick}
         >
-          <p className="text-xs text-white">nombre de vues </p>
-          <p className="text-xs text-white">date de la diffusion </p>
+          <p className="text-xs ">nombre de vues </p>
+          <p className="mr-auto text-xs">date de la diffusion </p>
+
+          {isDropdownOpen && (
+            <div className="flex-col">
+              <p className=" text-xs">
+                Hidden text goes here Hidden text goes here Hidden text goes here
+              </p>
+            </div>
+          )}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -67,11 +72,6 @@ export function PlayerPage() {
             <path d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
           </svg>
         </div>
-        {isDropdownOpen && (
-          <div className="relative flex h-8 items-center rounded-2xl bg-gray-400 pl-4 md:mx-12">
-            <p className="text-xs text-white">Hidden text goes here</p>
-          </div>
-        )}
       </div>
     </>
   );
