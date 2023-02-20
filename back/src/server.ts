@@ -4,6 +4,7 @@ import cors from '@fastify/cors';
 import { fastify } from 'fastify';
 import { Database } from '~/database';
 import { authRouter, passwordResetRouter, userRouter } from '~/router';
+import { mail } from './plugins/mail.plugin';
 
 const initServer = async (opts?: FastifyServerOptions) => {
   const app = fastify(opts);
@@ -16,6 +17,12 @@ const initServer = async (opts?: FastifyServerOptions) => {
 
   app.register(jwt, {
     secret: import.meta.env.VITE_JWT_SECRET,
+  });
+
+  app.register(mail, {
+    username: 'lime',
+    key: import.meta.env.VITE_MAIL_KEY,
+    url: import.meta.env.VITE_MAIL_URL,
   });
 
   app.register(authRouter);

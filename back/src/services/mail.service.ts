@@ -4,21 +4,18 @@ import type { IUser } from '~/shared/types';
 import type Client from 'mailgun.js/client';
 import Mailgun from 'mailgun.js';
 import FormData from 'form-data';
+import Options from 'mailgun.js/interfaces/Options';
 
 export class MailService {
   private app: FastifyInstance;
   private client: Client;
   private domain = import.meta.env.VITE_DOMAIN_NAME;
 
-  constructor(app: FastifyInstance) {
+  constructor(app: FastifyInstance, options: Options) {
     const mailgun = new Mailgun(FormData);
 
     this.app = app;
-    this.client = mailgun.client({
-      username: 'lime',
-      key: import.meta.env.VITE_MAIL_KEY,
-      url: import.meta.env.VITE_MAIL_URL,
-    });
+    this.client = mailgun.client(options);
   }
 
   public async sendSignUp(user: IUser) {

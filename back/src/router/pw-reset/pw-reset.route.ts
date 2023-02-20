@@ -29,8 +29,7 @@ export const passwordResetRouter: FastifyPluginCallback = (app, opts, next) => {
         });
 
         // sends an email with a token
-        const service = new MailService(app);
-        const token = await service.sendPasswordReset(user);
+        const token = await app.mail.sendPasswordReset(user);
 
         // save the token in the database
         await MailVerifyController.create({
