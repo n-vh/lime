@@ -8,7 +8,7 @@ export function Search() {
     <>
       <button
         id="search-button"
-        className=" ml-auto inline-flex items-center rounded-l-full bg-gray-200 px-1"
+        className=" ml-auto inline-flex items-center rounded-l-full bg-gray-300 px-1"
         type="button"
         onClick={togglePopup}
       >
@@ -35,7 +35,7 @@ export function Search() {
         </svg>
       </button>
       {isOpen && (
-        <div className="z-1 absolute top-36 left-12 right-12 h-16 rounded-lg border-2 border-[#e3ff7d] backdrop-blur-md lg:left-72 lg:right-72">
+        <div className="absolute top-36 left-8 right-8 h-16 rounded-lg border-2 border-[#e3ff7d] backdrop-blur-md lg:left-72 lg:right-72">
           <input
             className=" h-full w-full rounded-lg
 

@@ -1,6 +1,4 @@
-import { ButtonTypes } from '~/components/ButtonTypes';
 import { Footer } from '~/components/Footer';
-import Form from '~/components/Form';
 import { Navbar } from '~/components/Navbar';
 
 export function Sign() {
@@ -8,7 +6,7 @@ export function Sign() {
     <>
       <div className="flex">
         <div className="w-3/5 shrink md:w-2/5"></div>
-        <div className=" border-border mt-24 w-[550px]">
+        <div className=" border-border mt-24">
           <div className="relative items-center rounded-2xl border-2 border-[#52525B] bg-[#3F3F46]">
             <div className="place-items-center px-6 py-6 lg:px-8">
               <h1 className="mb-4 text-center text-xl font-medium text-gray-900 dark:text-white">

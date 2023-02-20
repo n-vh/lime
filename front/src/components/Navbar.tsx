@@ -3,7 +3,7 @@ import { Filter } from './Filter';
 
 export function Navbar() {
   return (
-    <nav className=" py-4 backdrop-blur-md sm:px-4">
+    <nav className="  py-4 backdrop-blur-md sm:px-4">
       <div className="mx-auto flex flex-wrap px-8 ">
         <a href="" className="flex content-center items-center">
           <svg
@@ -26,13 +26,13 @@ export function Navbar() {
 
         <div
           id="dropdown"
-          className="z-10 hidden w-44 divide-y rounded-md dark:bg-gray-300"
+          className="z-10 hidden w-44 divide-y rounded-md dark:bg-gray-400"
         ></div>
 
         <div className="ml-auto flex items-center">
           <button
             type="button"
-            className="mr-3 flex rounded-full bg-gray-600 text-sm focus:ring-4 focus:ring-[#e3ff7d] md:mr-0"
+            className="mr-3 flex rounded-full bg-gray-600 text-sm focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-400 md:mr-0"
             id="user-menu-button"
             aria-expanded="false"
             data-dropdown-toggle="user-dropdown"
@@ -47,7 +47,7 @@ export function Navbar() {
           </button>
 
           <div
-            className="z-50 my-4 hidden list-none divide-solid rounded-md dark:divide-gray-400 dark:bg-gray-300"
+            className="z-50 my-4 hidden list-none divide-solid rounded-md dark:divide-gray-400 dark:bg-gray-400"
             id="user-dropdown"
           >
             <div className="px-4 py-3">
@@ -86,7 +86,7 @@ export function Navbar() {
         <div className="flex items-center md:hidden">
           <button
             type="button"
-            className=" flex rounded-full border border-gray-300 md:mr-0"
+            className=" flex rounded-full border border-black md:mr-0"
             id="user-menu-button"
             aria-expanded="false"
             data-dropdown-toggle="user-dropdown"
@@ -99,14 +99,14 @@ export function Navbar() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="h-8 w-8 text-gray-300"
+              className="h-6 w-6"
             >
               <path d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
             </svg>
           </button>
 
           <div
-            className=" my-4 hidden list-none divide-solid rounded-md dark:divide-gray-400 dark:bg-gray-400"
+            className="z-50 my-4 hidden list-none divide-solid rounded-md dark:divide-gray-400 dark:bg-gray-400"
             id="user-dropdown"
           >
             <div className="px-4 py-3">
