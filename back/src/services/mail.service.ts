@@ -8,9 +8,7 @@ import FormData from 'form-data';
 export class MailService {
   private app: FastifyInstance;
   private client: Client;
-  private domain = import.meta.env.PROD
-    ? 'https://' + import.meta.env.VITE_DOMAIN_NAME
-    : 'http://localhost:6543';
+  private domain = import.meta.env.VITE_DOMAIN_NAME;
 
   constructor(app: FastifyInstance) {
     const mailgun = new Mailgun(FormData);
@@ -24,8 +22,7 @@ export class MailService {
   }
 
   public async sendPasswordReset(user: IUser) {
-    const token = this.app.jwt.sign({ payload: user }, { expiresIn: '24h' });
-    const url = `${this.domain}/password-reset?token=${token}`;
+    const { url, token } = this.appendTokenToURL('/password-reset', user, '24h');
 
     this.send({
       to: user.email,
@@ -51,5 +48,10 @@ export class MailService {
         from: `Lime <noreply@${import.meta.env.VITE_DOMAIN_NAME}>`,
       })
       .catch((err) => console.error(err));
+  }
+
+  private appendTokenToURL<T>(route: string, payload: T, expiresIn: string) {
+    const token = this.app.jwt.sign({ payload }, { expiresIn });
+    return { url: `${this.domain}${route}?token=${token}`, token };
   }
 }
