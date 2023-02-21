@@ -7,6 +7,7 @@ import { Card } from '~/components/Card';
 import { Sign } from '~/pages/Sign';
 import { UserModification } from '~/pages/UserModification';
 import './index.css';
+import { PageShowAll } from './pages/PageShowAll';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/" index element={<Index />} />
         <Route path="/sign" element={<Sign />} />
         <Route path="/user" element={<UserModification />} />
+        <Route path="/showall" element={<PageShowAll />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
