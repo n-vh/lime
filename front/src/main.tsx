@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Index } from '~/pages/Index';
+import { Index } from '~/pages/LandingPage';
 import { Navbar } from '~/components/Navbar';
 import { Card } from '~/components/Card';
 import { Sign } from '~/pages/Sign';
