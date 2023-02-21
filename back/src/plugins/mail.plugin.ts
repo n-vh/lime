@@ -14,3 +14,5 @@ export const mail: FastifyPluginCallback<Options> = (app, opts, next) => {
 
   next();
 };
+
+mail[Symbol.for('skip-override')] = true;

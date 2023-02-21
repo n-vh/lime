@@ -14,7 +14,7 @@ type PasswordResetRouteRequest = FastifyRequest<{
 }>;
 
 type PasswordResetVerifyRouteRequest = FastifyRequest<{
-  Body: Pick<IUser, 'password'> & { token: string; userId: string };
+  Body: Pick<IUser, 'password'> & { token: string };
 }>;
 
 export const passwordResetRouter: FastifyPluginCallback = (app, opts, next) => {

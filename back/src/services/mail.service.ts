@@ -9,7 +9,6 @@ import Options from 'mailgun.js/interfaces/Options';
 export class MailService {
   private app: FastifyInstance;
   private client: Client;
-  private domain = import.meta.env.VITE_DOMAIN_NAME;
 
   constructor(app: FastifyInstance, options: Options) {
     const mailgun = new Mailgun(FormData);
@@ -69,6 +68,6 @@ export class MailService {
 
   private appendTokenToURL<T>(route: string, payload: T, expiresIn: string) {
     const token = this.app.jwt.sign({ payload }, { expiresIn });
-    return { url: `${this.domain}${route}?token=${token}`, token };
+    return { url: `${import.meta.env.VITE_HOST_URL}${route}?token=${token}`, token };
   }
 }
