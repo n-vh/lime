@@ -4,6 +4,8 @@ import { MailVerifyController, UserController } from '~/controllers';
 import { SignInRouteSchema, SignUpRouteSchema } from './auth.schema';
 import { comparePassword, hashPassword } from '~/utils/password';
 import { MailVerifyType } from '~/shared/enums';
+import { UserModel } from '~/database/models';
+import { tokenPayload } from '~/utils/token';
 
 type SignUpRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'username' | 'email' | 'password'>;
@@ -24,30 +26,46 @@ export const authRouter: FastifyPluginCallback = (app, opts, next) => {
     schema: SignUpRouteSchema,
     handler: async (req: SignUpRouteRequest, rep) => {
       try {
-        // if the user already exists, throw an error
-        const user = await UserController.create({
-          ...req.body,
-          password: await hashPassword(req.body.password),
+        const user = await UserModel.findOne({
+          $or: [{ email: req.body.email }, { username: req.body.username }],
         });
 
-        // when the user is created, send a Bearer token
+        if (user) {
+          if (user.email === req.body.email) {
+            throw new Error('EMAIL_ALREADY_USED');
+          } else {
+            throw new Error('USERNAME_ALREADY_USED');
+          }
+        }
+
+        // sends an email with a token
+        const token = await app.mail.sendSignUp(req.body);
+
+        // save the token in the database
+        await MailVerifyController.create({
+          token,
+          type: MailVerifyType.SIGNUP,
+        });
+
         rep.send({
-          token: app.jwt.sign({ payload: user.toJSON() }, { expiresIn: '7d' }),
+          status: 200,
+          message: 'SIGNUP_TOKEN_SENT',
+        });
+      } catch (e) {
+        rep.status(400).send({
+          status: 400,
+          error: e.message,
+        });
+      }
+    },
+  });
 
   app.route({
     url: '/signup/verify',
     method: 'POST',
     handler: async (req: SignUpRouteVerifyRequest, rep) => {
       try {
-        // decode the token
-        const token = app.jwt.verify(req.body.token);
-        const user = token['payload'];
-
-        // check if token is expired
-        const dateNow = Math.floor(Date.now() / 1000);
-        if (dateNow >= token['exp']) {
-          throw new Error('TOKEN_EXPIRED');
-        }
+        const user = tokenPayload(app, req.body.token);
 
         // delete the mail verify token
         // throws error if token is not found

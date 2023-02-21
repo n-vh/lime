@@ -8,6 +8,7 @@ import {
   PasswordResetVerifyRouteSchema,
 } from './pw-reset.schema';
 import { hashPassword } from '~/utils/password';
+import { tokenPayload } from '~/utils/token';
 
 type PasswordResetRouteRequest = FastifyRequest<{
   Body: Pick<IUser, 'email'>;
@@ -53,15 +54,7 @@ export const passwordResetRouter: FastifyPluginCallback = (app, opts, next) => {
     schema: PasswordResetVerifyRouteSchema,
     handler: async (req: PasswordResetVerifyRouteRequest, rep) => {
       try {
-        // decode the token
-        const token = app.jwt.verify(req.body.token);
-        const user = token['payload'];
-
-        // check if token is expired
-        const dateNow = Math.floor(Date.now() / 1000);
-        if (dateNow >= token['exp']) {
-          throw new Error('TOKEN_EXPIRED');
-        }
+        const user = tokenPayload(app, req.body.token);
 
         // delete the mail verify token
         // throws error if token is not found
