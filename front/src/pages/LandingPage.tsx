@@ -64,7 +64,7 @@ export function Index() {
         </div>
       </div>
       <br></br>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="mx-9 my-5 grid grid-cols-3 gap-3 ">
         <div className="flex justify-center">
           <img className="rounded-md sm:h-fit sm:w-6/12" src="../images/lol.jpg"></img>
         </div>
