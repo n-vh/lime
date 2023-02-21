@@ -17,3 +17,10 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+p {
+  font-family: 'Didact Gothic', sans-serif;
+}
+button {
+  font-family: 'Didact Gothic', sans-serif;
+}
