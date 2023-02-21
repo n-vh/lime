@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #27272a;
+}
+
+h1 {
+  font-family: 'Quantico', sans-serif;
+}
+p {
+  font-family: 'Didact Gothic', sans-serif;
+}
+button {
+  font-family: 'Didact Gothic', sans-serif;
+}
