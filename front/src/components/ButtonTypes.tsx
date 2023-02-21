@@ -16,7 +16,7 @@ export function ButtonTypes({
   return (
     <button
       type={type}
-      className={`inline-flex items-center rounded-2xl border border-transparent bg-gray-900 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900 ${
+      className={`text-md mt-4 w-full rounded-2xl bg-[#e3ff7d] px-5 py-2.5 font-bold text-black dark:bg-[#e3ff7d] ${
         processing ? 'opacity-25' : ''
       } ${className}`}
       disabled={processing}

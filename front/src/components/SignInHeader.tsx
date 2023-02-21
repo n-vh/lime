@@ -9,7 +9,7 @@ type Props =
   | { authenticated: false; profile: null }
   | { authenticated: true; profile: User };
 
-function Header(props: Props) {
+export function Header(props: Props) {
   return (
     <header className=" relative bg-zinc-800">
       <div className="flex p-4">
@@ -28,4 +28,3 @@ function Header(props: Props) {
     </header>
   );
 }
-export default Header;
