@@ -1,7 +1,7 @@
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 
-export function Sign() {
+export function SignIn() {
   return (
     <>
       <div className="flex">
@@ -20,7 +20,7 @@ export function Sign() {
                 </p>
                 <div className="w-2/5 shrink"></div>
               </div>
-              <form className="md:mx-8" action="#">
+              <div className="md:mx-8">
                 <div>
                   <input
                     type="email"
@@ -40,17 +40,16 @@ export function Sign() {
                 </button>
                 <div className="mt-12 text-center text-sm font-medium text-gray-500 dark:text-gray-300">
                   New on Lime+?{' '}
-                  <a href="#" className=" text-[#e3ff7d] underline">
+                  <a href="/signup" className=" text-[#e3ff7d] underline">
                     Sign up
                   </a>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
         <div className="w-3/5 shrink md:w-2/5"></div>
       </div>
-      <Footer />
     </>
   );
 }
