@@ -38,7 +38,7 @@ export class MailService {
   }
 
   public async sendPasswordReset(user: IUser) {
-    const { url, token } = this.appendTokenToURL('/password-reset', user, '24h');
+    const { url, token } = this.appendTokenToURL('/password-reset', user, ' 24h');
 
     this.send({
       to: user.email,

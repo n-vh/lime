@@ -13,3 +13,41 @@ export interface IMailVerify {
   token: string;
   type: MailVerifyType;
 }
+
+export interface IStreamer {
+  _id?: ObjectId;
+  name: string;
+  twitch_id: string;
+  description: string;
+  language: string;
+  tags: string[];
+  profile_picture: string;
+  socials: {
+    twitch: {
+      url: string;
+      followers: string;
+    };
+    youtube: {
+      url: string;
+      followers: string;
+    };
+    twitter: {
+      url: string;
+    };
+    instagram: {
+      url: string;
+    };
+  };
+  vods: ObjectId[];
+}
+
+export interface IVod {
+  streamer: String;
+  streamer_ref: ObjectId;
+  title: String;
+  thumbnail: String;
+  tag: String;
+  views: Number;
+  duration: String;
+  likes: Number;
+}
