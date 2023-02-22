@@ -7,8 +7,14 @@ body {
   font-family: 'Didact Gothic', sans-serif;
 }
 
+h1,
+h2 {
+  font-family: 'Quantico', sans-serif;
+}
+
+
 #bg {
-  background-image: url(../images/lime.jpg);
+  background-image: url(../images/bg.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -3,7 +3,8 @@ import { Filter } from './Filter';
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 z-10 w-full  py-4 backdrop-blur-md sm:px-4">
+
+    <nav className="relative py-4 backdrop-blur-md sm:px-4">
       <div className="mx-auto flex flex-wrap px-8 ">
         <a href="" className="flex content-center items-center">
           <svg
@@ -86,7 +87,7 @@ export function Navbar() {
         <div className="flex items-center md:hidden">
           <button
             type="button"
-            className=" flex rounded-full border border-black md:mr-0"
+            className=" flex rounded-full border border-white md:mr-0"
             id="user-menu-button"
             aria-expanded="false"
             data-dropdown-toggle="user-dropdown"
@@ -98,7 +99,7 @@ export function Navbar() {
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
-              stroke="currentColor"
+              stroke="white"
               className="h-6 w-6"
             >
               <path d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
