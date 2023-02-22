@@ -4,16 +4,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Index } from '~/pages/Index';
 import { Navbar } from '~/components/Navbar';
 import { Card } from '~/components/Card';
-import { Sign } from '~/pages/Sign';
+import { SignIn } from '~/pages/SignIn';
 import { UserModification } from '~/pages/UserModification';
 import './index.css';
+import { SignUp } from './pages/SignUp';
+import { FilmShowsOne } from './pages/FilmShowsOne';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+        <Route path="/FilmShowsOne" index element={<FilmShowsOne />} />
         <Route path="/" index element={<Index />} />
-        <Route path="/sign" element={<Sign />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/user" element={<UserModification />} />
       </Routes>
     </BrowserRouter>
