@@ -14,9 +14,9 @@ const schema = new Schema({
   thumbnail: String,
   tag: String,
   category: String,
-  views: Number,
+  views: String,
   duration: String,
-  likes: Number,
+  likes: String,
 });
 
 export const VodModel = model('Vod', schema);
