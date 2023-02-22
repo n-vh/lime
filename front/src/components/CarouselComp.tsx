@@ -1,6 +1,6 @@
 export function Carousel() {
   return (
-    <div className=" mt-12 flex overflow-hidden overflow-x-auto lg:mt-16">
+    <div className="ml-8 mr-8 mt-12 flex overflow-hidden overflow-x-auto lg:mt-16">
       <div className="mx-2 aspect-video shrink-0 rounded-2xl md:w-96">
         <img
           src="./images/placeholder.png"
