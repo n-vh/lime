@@ -36,4 +36,16 @@ export const VodController = {
 
     return doc;
   },
+
+  async findByLanguage(language: string) {
+    const doc = await VodModel.find({
+      language,
+    });
+
+    if (!doc) {
+      throw new Error('VOD_NOT_FOUND');
+    }
+
+    return doc;
+  },
 };

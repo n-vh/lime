@@ -44,7 +44,10 @@ export interface IStreamer {
 export interface IVod {
   streamer: String;
   streamer_ref: ObjectId;
+  id_video: String;
   title: String;
+  date: String;
+  language: String;
   thumbnail: String;
   tag: String;
   views: Number;
