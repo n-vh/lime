@@ -16,3 +16,11 @@ export enum Tags {
   VARIETY = 'variety',
   ESPORTS = 'esports',
 }
+
+export enum Categories {
+  TREND = 'trend',
+  RECENTLY = 'recently',
+  POPULAR = 'popular',
+  BIG_STREAMER = 'big_streamer',
+  TOP_SEARCH = 'top_search',
+}

@@ -48,4 +48,16 @@ export const VodController = {
 
     return doc;
   },
+
+  async findByCategory(category: string) {
+    const doc = await VodModel.find({
+      category,
+    });
+
+    if (!doc) {
+      throw new Error('VOD_NOT_FOUND');
+    }
+
+    return doc;
+  },
 };

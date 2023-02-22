@@ -46,10 +46,12 @@ export interface IVod {
   streamer_ref: ObjectId;
   id_video: String;
   title: String;
+  description: String;
   date: String;
   language: String;
   thumbnail: String;
   tag: String;
+  category: String;
   views: Number;
   duration: String;
   likes: Number;
