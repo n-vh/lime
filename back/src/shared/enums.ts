@@ -21,6 +21,6 @@ export enum Categories {
   TREND = 'trend',
   RECENTLY = 'recently',
   POPULAR = 'popular',
-  BIG_STREAMER = 'big_streamer',
+  BIG_STREAMERS = 'big_streamers',
   TOP_SEARCH = 'top_search',
 }
