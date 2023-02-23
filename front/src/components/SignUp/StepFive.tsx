@@ -37,7 +37,6 @@ export function StepFive({
     // todo payment system
     setPayment(true);
     setStep(6);
-    console.log(email, username, terms, password, payment);
 
     if (email && username && terms && password && payment) {
       refetch();

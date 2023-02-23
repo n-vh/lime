@@ -22,7 +22,7 @@ export function SignUp() {
       <div className="mb-9 flex">
         <div className="w-3/5 shrink md:w-2/5"></div>
         <div className=" border-border mt-10">
-          <p className="p-1 text-sm text-white">Step {step} of 5</p>
+          <p className="p-1 text-sm text-white">Step {step} of 6</p>
           <StepSwitch
             email={email}
             setEmail={setEmail}
