@@ -20,9 +20,13 @@ export const userRouter: FastifyPluginCallback = (app, opts, next) => {
           email: req.body.email.toLowerCase(),
         });
 
-        rep.send(true);
+        rep.send({
+          exists: true,
+        });
       } catch (e) {
-        rep.send(false);
+        rep.send({
+          exists: false,
+        });
       }
     },
   });
