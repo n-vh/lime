@@ -68,7 +68,7 @@ export function PageShowAll() {
         </div>
       </div>
 
-      <div className="ml-4 mt-[285px] md:mt-[395px] lg:mt-[365px]"></div>
+      <div className="ml-4 mt-[285px] md:mt-[395px] lg:mt-[350px]"></div>
 
       <Divider />
 
