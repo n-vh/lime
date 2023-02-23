@@ -2,6 +2,8 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 import { StepOne } from './StepOne';
 import { StepTwo } from './StepTwo';
 import { StepFive } from './StepFive';
+import { StepThree } from './StepThree';
+import { StepFour } from './StepFour';
 
 interface Props {
   email: string;
@@ -47,10 +49,10 @@ export function StepSwitch({
       return <StepOne email={email} setEmail={setEmail} setStep={setStep} />;
     case 2:
       return <StepTwo username={username} setUsername={setUsername} setStep={setStep} />;
-    // case 3:
-    //   return <StepThree />;
-    // case 4:
-    //   return <StepFour />;
+    case 3:
+      return <StepThree setStep={setStep} />;
+    case 4:
+      return <StepFour password={password} setPassword={setPassword} setStep={setStep} />;
     case 5:
       return (
         <StepFive

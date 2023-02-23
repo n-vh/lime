@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Header } from '~/components/SignInHeader';
 import { StepSwitch } from '~/components/SignUp/StepSwitch';
 
 export function SignUp() {
-  // const [email, setEmail] = useState('');
-  // const [username, setUsername] = useState('');
-  // const [terms, setTerms] = useState(false);
-  // const [password, setPassword] = useState('');
-  // const [step, setStep] = useState(1);
-  const [email, setEmail] = useState('nils.vanhee@protonmail.com');
-  const [username, setUsername] = useState('hello');
-  const [terms, setTerms] = useState(true);
-  const [password, setPassword] = useState('password');
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [terms, setTerms] = useState(false);
+  const [password, setPassword] = useState('');
+  const [step, setStep] = useState(1);
   const [payment, setPayment] = useState(true);
-  const [step, setStep] = useState(5);
+  // const [email, setEmail] = useState('nils.vanhee@protonmail.com');
+  // const [username, setUsername] = useState('hello');
+  // const [terms, setTerms] = useState(true);
+  // const [password, setPassword] = useState('password');
+  // const [payment, setPayment] = useState(true);
+  // const [step, setStep] = useState(5);
 
   return (
     <>
