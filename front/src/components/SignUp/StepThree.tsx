@@ -2,10 +2,16 @@ import { Dispatch, SetStateAction } from 'react';
 import { Button } from '../Button';
 
 interface Props {
+  setTerms: Dispatch<SetStateAction<boolean>>;
   setStep: Dispatch<SetStateAction<number>>;
 }
 
-export function StepThree({ setStep }: Props) {
+export function StepThree({ setTerms, setStep }: Props) {
+  const onClick = () => {
+    setTerms(true);
+    setStep(4);
+  };
+
   return (
     <div className="relative items-center rounded-2xl border-2 border-[#52525B] bg-[#3F3F46]">
       <div className="place-items-center px-6 py-6 lg:px-8">
@@ -65,7 +71,7 @@ export function StepThree({ setStep }: Props) {
             </li>
           </ol>
         </div>
-        <Button className="mb-5" onClick={() => setStep(4)}>
+        <Button className="mb-5" onClick={onClick}>
           Accept and Continue
         </Button>
       </div>

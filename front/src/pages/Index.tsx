@@ -18,6 +18,10 @@ export function Index() {
   });
 
   useEffect(() => {
+    if (window.localStorage.getItem('token')) {
+      window.location.href = '/home';
+    }
+
     if (data?.exists === true) {
       window.location.href = '/signin';
     } else if (data?.exists === false) {

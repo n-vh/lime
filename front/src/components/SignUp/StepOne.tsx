@@ -53,7 +53,7 @@ export function StepOne({ email, setEmail, setStep }: Props) {
             confirming that you have read our Privacy Policy, our Cookie Policy.
           </div>
 
-          <Button className="mb-3" onClick={() => setStep(2)}>
+          <Button className="mb-3" onClick={() => setStep(2)} disabled={!email}>
             Continue
           </Button>
         </div>

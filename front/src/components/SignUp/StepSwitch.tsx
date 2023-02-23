@@ -4,6 +4,7 @@ import { StepTwo } from './StepTwo';
 import { StepFive } from './StepFive';
 import { StepThree } from './StepThree';
 import { StepFour } from './StepFour';
+import { StepConfirm } from './StepConfirm';
 
 interface Props {
   email: string;
@@ -50,7 +51,7 @@ export function StepSwitch({
     case 2:
       return <StepTwo username={username} setUsername={setUsername} setStep={setStep} />;
     case 3:
-      return <StepThree setStep={setStep} />;
+      return <StepThree setTerms={setTerms} setStep={setStep} />;
     case 4:
       return <StepFour password={password} setPassword={setPassword} setStep={setStep} />;
     case 5:
@@ -61,9 +62,12 @@ export function StepSwitch({
           terms={terms}
           password={password}
           payment={payment}
+          setStep={setStep}
           setPayment={setPayment}
         />
       );
+    case 6:
+      return <StepConfirm />;
     default:
       return <StepOne email={email} setEmail={setEmail} setStep={setStep} />;
   }

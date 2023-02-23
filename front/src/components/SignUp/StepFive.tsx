@@ -8,6 +8,7 @@ interface Props {
   terms: boolean;
   password: string;
   payment: boolean;
+  setStep: Dispatch<SetStateAction<number>>;
   setPayment: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -17,6 +18,7 @@ export function StepFive({
   terms,
   password,
   payment,
+  setStep,
   setPayment,
 }: Props) {
   const { data, refetch } = useFetch('http://localhost:6543/signup', {
@@ -34,6 +36,8 @@ export function StepFive({
   const onSubscribe = () => {
     // todo payment system
     setPayment(true);
+    setStep(6);
+    console.log(email, username, terms, password, payment);
 
     if (email && username && terms && password && payment) {
       refetch();

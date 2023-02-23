@@ -1,7 +1,7 @@
 interface ButtonProps {
   type?: 'submit' | 'button';
   className?: string;
-  processing?: boolean;
+  disabled?: boolean;
   children: React.ReactNode;
   onClick?: () => void;
 }
@@ -9,7 +9,7 @@ interface ButtonProps {
 export function Button({
   type = 'submit',
   className = '',
-  processing = false,
+  disabled = false,
   children,
   onClick,
 }: ButtonProps) {
@@ -17,9 +17,9 @@ export function Button({
     <button
       type={type}
       className={`text-md mt-4 w-full rounded-lg bg-[#e3ff7d] px-5 py-2.5 font-bold text-black dark:bg-[#e3ff7d] ${
-        processing ? 'opacity-25' : ''
+        disabled ? 'opacity-25' : ''
       } ${className}`}
-      disabled={processing}
+      disabled={disabled}
       onClick={onClick}
     >
       {children}

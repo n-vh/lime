@@ -1,8 +1,15 @@
 import { Carousel } from '~/components/Home/Carousel';
 import { Divider } from '~/components/Divider';
 import { Navbar } from '~/components/Navbar';
+import { useEffect } from 'react';
 
 export function Home() {
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      window.location.href = '/';
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
