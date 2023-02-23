@@ -11,12 +11,14 @@ import { PlayerPage } from './pages/PlayerPage';
 import './index.css';
 import { SignUp } from './pages/SignUp';
 import { FilmShowsOne } from './pages/FilmShowsOne';
+import { AuthContext } from './Context/AuthContext';
+import { useAuth } from './hooks/useAuth';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/FilmShowsOne" index element={<FilmShowsOne />} />
+        {/* <Route path="/FilmShowsOne" index element={<FilmShowsOne />} /> */}
         <Route path="/" index element={<Index />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />

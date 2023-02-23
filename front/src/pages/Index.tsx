@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import SignInButton from '~/components/SignInButton';
 import { Footer } from '~/components/Footer';
 import { ButtonTypes } from '~/components/ButtonTypes';
@@ -25,6 +25,7 @@ export function Index() {
       window.location.href = '/signup';
     }
   }, [data]);
+
   return (
     <>
       <div className="relative h-screen">
