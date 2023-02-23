@@ -1,5 +1,5 @@
-import { Search } from './Search';
-import { Filter } from './Filter';
+import { Search } from './Navbar/Search';
+import { Filter } from './Navbar/Filter';
 
 export function Navbar() {
   return (
@@ -21,7 +21,6 @@ export function Navbar() {
         </a>
 
         <Search />
-
         <Filter />
 
         <div

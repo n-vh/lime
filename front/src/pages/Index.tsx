@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
-import SignInButton from '~/components/SignInButton';
+import { useEffect, useState } from 'react';
+import { Button as SignInButton } from '~/components/SignIn/Button';
 import { Footer } from '~/components/Footer';
-import { ButtonTypes } from '~/components/ButtonTypes';
-
-import '../index.css';
+import { Button } from '~/components/Button';
 import { useFetch } from '~/hooks/useFetch';
+import '../index.css';
 
 export function Index() {
   const [email, setEmail] = useState('');
@@ -49,9 +48,9 @@ export function Index() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <ButtonTypes className="mb-3" onClick={refetch}>
+              <Button className="mb-3" onClick={refetch}>
                 Continue
-              </ButtonTypes>
+              </Button>
               <p className="text-sm text-white">
                 Get 12 months of Lime+ at the price of 10 with an annual subscription!
                 Save compared to a monthly subscription over the course of a year.

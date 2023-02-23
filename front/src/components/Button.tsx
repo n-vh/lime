@@ -1,5 +1,3 @@
-import react from 'react';
-
 interface ButtonProps {
   type?: 'submit' | 'button';
   className?: string;
@@ -8,7 +6,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export function ButtonTypes({
+export function Button({
   type = 'submit',
   className = '',
   processing = false,

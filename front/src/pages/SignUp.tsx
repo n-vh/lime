@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react';
-import { Header } from '~/components/SignInHeader';
+import { useState } from 'react';
+import { Header } from '~/components/SignIn/Header';
 import { StepSwitch } from '~/components/SignUp/StepSwitch';
 
 export function SignUp() {

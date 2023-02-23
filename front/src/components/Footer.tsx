@@ -1,8 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
-import react from 'react';
-
 export function Footer() {
-  const footer = useParams();
   return (
     <div className="inset-x-0 bottom-0 border-[#27272A] bg-[#27272A] p-4 py-4 shadow ">
       <hr className="my-4 border-[#52525B] sm:mx-auto lg:my-6" />

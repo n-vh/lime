@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function ChangePasswordComp() {
+export function EditPassword() {
   const [showLink1, setShowLink] = useState(false);
 
   function ProfilePicAction() {

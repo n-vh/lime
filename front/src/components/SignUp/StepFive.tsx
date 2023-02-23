@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect } from 'react';
-import { ButtonTypes } from '../ButtonTypes';
+import { Button } from '../Button';
 import { useFetch } from '~/hooks/useFetch';
 
 interface Props {
@@ -128,7 +128,7 @@ export function StepFive({
           choose. Cancellation is possible at any time and takes effect at the end of the
           billing period. Months or years already started cannot be refunded or credited.
         </div>
-        <ButtonTypes onClick={onSubscribe}>Accept and Subscribe</ButtonTypes>
+        <Button onClick={onSubscribe}>Accept and Subscribe</Button>
       </div>
     </div>
   );

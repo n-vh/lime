@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { ButtonTypes } from './ButtonTypes';
+import { useState } from 'react';
 
 export function Filter() {
   const [isOpen, setIsOpen] = useState(false);

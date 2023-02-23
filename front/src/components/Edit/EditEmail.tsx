@@ -1,28 +1,23 @@
 import { useState } from 'react';
-import { UserPp } from '~/components/UserPp';
-export function ChangePpComp() {
+
+export function EditEmail() {
   const [showLink1, setShowLink] = useState(false);
 
   function ProfilePicAction() {
     setShowLink(!showLink1);
   }
+
   return (
-    <div className="justify-content-center rounded-2xl border-2 border-[#e3ff7d] bg-[#3F3F46]">
-      <div className="flex flex-col rounded-2xl  p-6 shadow">
-        <div className="felx">
-          {showLink1 && (
-            <div className="insert-1 absolute">
-              <input type="file" className="rounded-0" />
-            </div>
-          )}
-          <UserPp />
-        </div>
-        <div className="flex w-full translate-y-[2.8rem] justify-evenly	">
+    <div className="justify-content-center h-[190px] rounded-2xl border-2 border-[#e3ff7d] bg-[#3F3F46]">
+      <div className="align-center flex flex-col items-center rounded-2xl">
+        <h1 className="mt-12 flex items-center text-4xl text-white">E-mail</h1>
+
+        <div className="flex w-full translate-y-[5rem] justify-evenly ">
           {showLink1 ? (
             <>
               <button
                 onClick={ProfilePicAction}
-                className="inline-flex items-center rounded-full border border-[#3E76E7] bg-[#3F3F46] px-3  py-2 text-center text-[#3E76E7]"
+                className="inline-flex items-center rounded-full border border-[#3E76E7] bg-[#3F3F46] px-3 py-2 text-center text-[#3E76E7]"
               >
                 Cancel changes
               </button>
@@ -38,7 +33,7 @@ export function ChangePpComp() {
               onClick={ProfilePicAction}
               className="inline-flex items-center rounded-full bg-[#e3ff7d] px-3 py-2 text-center"
             >
-              Change profile picture
+              Change E-mail
             </button>
           )}
         </div>

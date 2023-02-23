@@ -1,10 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-import { ButtonTypes } from '../ButtonTypes';
+import { Button } from '../Button';
 
 interface Props {
   setStep: Dispatch<SetStateAction<number>>;
-  // Terms: boolean;
-  // setTerms: Dispatch<SetStateAction<boolean>>;
 }
 
 export function StepThree({ setStep }: Props) {
@@ -67,9 +65,9 @@ export function StepThree({ setStep }: Props) {
             </li>
           </ol>
         </div>
-        <ButtonTypes className="mb-5" onClick={() => setStep(4)}>
+        <Button className="mb-5" onClick={() => setStep(4)}>
           Accept and Continue
-        </ButtonTypes>
+        </Button>
       </div>
     </div>
   );

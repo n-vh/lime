@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { ButtonTypes } from '../ButtonTypes';
+import { Button } from '../Button';
 
 interface Props {
   password: string;
@@ -36,9 +36,9 @@ export function StepFour({ password, setPassword, setStep }: Props) {
           <div className="py-3 px-1 text-sm text-white">
             Use a minimum of 6 characters, including a number or special character.
           </div>
-          <ButtonTypes className="mb-3" onClick={() => setStep(5)}>
+          <Button className="mb-3" onClick={() => setStep(5)}>
             Continue
-          </ButtonTypes>
+          </Button>
         </div>
       </div>
     </div>

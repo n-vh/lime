@@ -1,6 +1,3 @@
-import react from 'react';
-import { ButtonTypes } from './ButtonTypes';
-
 type User = {
   name: string;
 };

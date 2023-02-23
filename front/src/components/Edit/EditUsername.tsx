@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function ChangeUsernameComp() {
+export function EditUsername() {
   const [showLink1, setShowLink] = useState(false);
 
   function ProfilePicAction() {

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { ButtonTypes } from '../ButtonTypes';
+import { Button } from '../Button';
 
 interface Props {
   email: string;
@@ -53,9 +53,9 @@ export function StepOne({ email, setEmail, setStep }: Props) {
             confirming that you have read our Privacy Policy, our Cookie Policy.
           </div>
 
-          <ButtonTypes className="mb-3" onClick={() => setStep(2)}>
+          <Button className="mb-3" onClick={() => setStep(2)}>
             Continue
-          </ButtonTypes>
+          </Button>
         </div>
       </div>
     </div>

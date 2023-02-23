@@ -1,9 +1,8 @@
-import React from 'react';
-import { ButtonTypes } from '~/components/ButtonTypes';
+import { Button } from '~/components/Button';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 
-export function FilmShowsOne() {
+export function Video() {
   return (
     <>
       <div id="bg">
@@ -26,7 +25,7 @@ export function FilmShowsOne() {
         </div>
       </div>
       <div className="mx-9 grid grid-cols-3 gap-3 md:mx-20 lg:grid lg:grid-cols-6">
-        <ButtonTypes className="flex -translate-y-12 place-content-center items-center">
+        <Button className="flex -translate-y-12 place-content-center items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="#27272A"
@@ -41,7 +40,7 @@ export function FilmShowsOne() {
               d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
             />
           </svg>
-        </ButtonTypes>
+        </Button>
         <div className="mt-4 flex h-16 -translate-y-12 items-center justify-center rounded-md bg-white/20 px-5 py-2.5 text-lg  text-white  backdrop-blur-sm">
           PG
           <p className="absolute left-0 origin-center -rotate-90 font-sans text-[8px] text-white">
