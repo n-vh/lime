@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 export function Filter() {
   const [isOpen, setIsOpen] = useState(false);
-  const togglePopup = () => setIsOpen(!isOpen);
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -39,7 +41,7 @@ export function Filter() {
         data-dropdown-toggle="dropdown"
         className="ml-[1px] inline-flex items-center rounded-r-full bg-gray-300 px-1"
         type="button"
-        onClick={togglePopup}
+        onClick={toggleOpen}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

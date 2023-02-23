@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 export function Search() {
   const [isOpen, setIsOpen] = useState(false);
-  const togglePopup = () => setIsOpen(!isOpen);
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -10,7 +12,7 @@ export function Search() {
         id="search-button"
         className=" ml-auto inline-flex items-center rounded-l-full bg-gray-300 px-1"
         type="button"
-        onClick={togglePopup}
+        onClick={toggleOpen}
       >
         <svg
           className="mr-2 ml-[6px] h-4 w-4"

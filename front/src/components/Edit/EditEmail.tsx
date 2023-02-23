@@ -3,7 +3,7 @@ import { useState } from 'react';
 export function EditEmail() {
   const [showLink1, setShowLink] = useState(false);
 
-  function ProfilePicAction() {
+  function toggleShowLink() {
     setShowLink(!showLink1);
   }
 
@@ -16,13 +16,13 @@ export function EditEmail() {
           {showLink1 ? (
             <>
               <button
-                onClick={ProfilePicAction}
+                onClick={toggleShowLink}
                 className="inline-flex items-center rounded-full border border-[#3E76E7] bg-[#3F3F46] px-3 py-2 text-center text-[#3E76E7]"
               >
                 Cancel changes
               </button>
               <button
-                onClick={ProfilePicAction}
+                onClick={toggleShowLink}
                 className="inline-flex items-center rounded-full bg-[#e3ff7d] px-3 py-2 text-center"
               >
                 Save changes
@@ -30,7 +30,7 @@ export function EditEmail() {
             </>
           ) : (
             <button
-              onClick={ProfilePicAction}
+              onClick={toggleShowLink}
               className="inline-flex items-center rounded-full bg-[#e3ff7d] px-3 py-2 text-center"
             >
               Change E-mail
