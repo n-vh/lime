@@ -5,6 +5,8 @@ import { fastify } from 'fastify';
 import { Database } from '~/database';
 import { mail } from '~/plugins/mail.plugin';
 import { authRouter, passwordResetRouter, userRouter } from '~/router';
+import { streamerRouter } from './router/streamer/streamer.route';
+import { vodRouter } from './router/vod/vod.route';
 
 const initServer = async (opts?: FastifyServerOptions) => {
   const app = fastify(opts);
@@ -27,7 +29,9 @@ const initServer = async (opts?: FastifyServerOptions) => {
 
   app.register(authRouter);
   app.register(passwordResetRouter);
+  app.register(streamerRouter);
   app.register(userRouter);
+  app.register(vodRouter);
 
   if (import.meta.env.PROD) {
     try {

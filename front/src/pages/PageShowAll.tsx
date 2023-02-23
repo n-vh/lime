@@ -10,7 +10,9 @@ export function PageShowAll() {
       <div className="absolute top-0 z-0 h-2/6 w-full rounded-b-2xl bg-gray-200">
         <div className="right-0 left-0 h-3/6 rounded-lg ">
           <div className="h4/6 w-full bg-slate-300"></div>
-          <h1 className="md:pt[200px] mb-2 pl-8 pt-[160px]">TITLE OF THE VIDEO</h1>
+          <h1 className="mb-2 pl-8 pt-[160px] md:pt-[240px] lg:pt-[250px]">
+            TITLE OF THE VIDEO
+          </h1>
           <div className="flex pl-8">
             <button className="flex h-8 w-24 items-center rounded-full bg-[#E3FF7D]">
               <svg
@@ -28,6 +30,7 @@ export function PageShowAll() {
               </svg>
               Watch
             </button>
+
             <div className="flex h-8 w-24 items-center rounded-full border border-[#E3FF7D]">
               <svg
                 width="10"
@@ -42,8 +45,9 @@ export function PageShowAll() {
                   fill="#27272A"
                 />
               </svg>
-              10.000
+              11.000
             </div>
+
             <div className="flex h-8 w-24 items-center rounded-full border border-[#E3FF7D]">
               <svg
                 width="10"

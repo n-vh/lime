@@ -3,7 +3,6 @@ import { Filter } from './Filter';
 
 export function Navbar() {
   return (
-
     <nav className="relative py-4 backdrop-blur-md sm:px-4">
       <div className="mx-auto flex flex-wrap px-8 ">
         <a href="" className="flex content-center items-center">
