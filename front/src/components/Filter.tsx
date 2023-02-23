@@ -38,7 +38,7 @@ export function Filter() {
       <button
         id="setting-button"
         data-dropdown-toggle="dropdown"
-        className="ml-[1px] inline-flex items-center rounded-r-full bg-gray-200 px-1"
+        className="ml-[1px] inline-flex items-center rounded-r-full bg-gray-300 px-1"
         type="button"
         onClick={togglePopup}
       >
