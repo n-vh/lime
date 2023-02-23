@@ -13,13 +13,13 @@ export function FilmShowsOne() {
             <h2 className="text-white">Amouranth</h2>
             <h1 className="text-2xl text-white">AMOURANTH WITH A LOLLY</h1>
             <div className="pt-2"></div>
-            <span className="bg-inert mr-2 rounded-md border border-[#D9D9D9] px-2.5 py-0.5 text-xs font-medium text-white">
+            <span className="bg-inert mr-2 h-10 rounded-full border border-[#D9D9D9] px-2 py-0.5 text-xs font-medium text-white">
               Porno
             </span>
-            <span className="bg-inert mr-2 rounded-md border border-[#D9D9D9] px-2.5 py-0.5 text-xs font-medium text-white">
+            <span className="bg-inert mr-2 h-10 rounded-full border border-[#D9D9D9] px-2 py-0.5 text-xs font-medium text-white">
               Porno
             </span>
-            <span className="bg-inert mr-2 rounded-md border border-[#D9D9D9] px-2.5 py-0.5 text-xs font-medium text-white">
+            <span className="bg-inert mr-2 h-10 rounded-full border border-[#D9D9D9] px-2 py-0.5 text-xs font-medium text-white">
               Porno
             </span>
           </div>
