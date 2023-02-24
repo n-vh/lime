@@ -1,8 +1,7 @@
-import React from 'react';
 import ReactPlayer from 'plyr-react';
 import 'plyr-react/plyr.css';
 
-export function Player() {
+export function Plyr() {
   return (
     <div className="z-0">
       <ReactPlayer

@@ -2,29 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Index } from '~/pages/Index';
-import { Navbar } from '~/components/Navbar';
-import { Card } from '~/components/Card';
 import { SignIn } from '~/pages/SignIn';
-import { UserModification } from '~/pages/UserModification';
-import { PageShowAll } from '~/pages/PageShowAll';
-import { PlayerPage } from './pages/PlayerPage';
-import './index.css';
+import { Edit } from '~/pages/Edit';
+import { Home } from '~/pages/Home';
+import { Player } from './pages/Player';
 import { SignUp } from './pages/SignUp';
-import { FilmShowsOne } from './pages/FilmShowsOne';
-import { AuthContext } from './Context/AuthContext';
-import { useAuth } from './hooks/useAuth';
+import { Video } from './pages/Video';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/FilmShowsOne" index element={<FilmShowsOne />} /> */}
         <Route path="/" index element={<Index />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/user" element={<UserModification />} />
-        <Route path="/showall" element={<PageShowAll />} />
-        <Route path="/player" element={<PlayerPage />} />
+        <Route path="/edit" element={<Edit />} />
+        <Route path="/vod/:id" element={<Video />} />
+        <Route path="/vod/:id/play" element={<Player />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

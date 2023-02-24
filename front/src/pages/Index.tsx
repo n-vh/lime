@@ -1,14 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
-import SignInButton from '~/components/SignInButton';
+import { useEffect, useState } from 'react';
+import { Button as SignInButton } from '~/components/SignIn/Button';
 import { Footer } from '~/components/Footer';
-import { ButtonTypes } from '~/components/ButtonTypes';
-
-import '../index.css';
+import { Button } from '~/components/Button';
 import { useFetch } from '~/hooks/useFetch';
+import '../index.css';
 
 export function Index() {
   const [email, setEmail] = useState('');
-  const { data, loading, refetch } = useFetch('http://localhost:6543/check', {
+  const { data, refetch } = useFetch('http://localhost:6543/check', {
     method: 'POST',
     body: JSON.stringify({
       email,
@@ -19,6 +18,10 @@ export function Index() {
   });
 
   useEffect(() => {
+    if (window.localStorage.getItem('token')) {
+      window.location.href = '/home';
+    }
+
     if (data?.exists === true) {
       window.location.href = '/signin';
     } else if (data?.exists === false) {
@@ -30,8 +33,8 @@ export function Index() {
     <>
       <div className="relative h-screen">
         <div className="absolute inset-0 mx-9 flex items-center justify-center">
-          <div className="relative z-10 my-24 mx-auto place-items-center rounded-md bg-zinc-700/30 p-9 text-center backdrop-blur-sm sm:my-20">
-            <h1 className="text-5xl text-[#E3FF7D]">Lime+</h1>
+          <div className="relative z-10 my-24 mx-auto place-items-center rounded-md bg-zinc-700/30 p-9 text-center backdrop-blur-sm sm:my-20 sm:w-2/4 md:w-2/5">
+            <h1 className="pb-5 text-6xl text-[#E3FF7D]">Lime+</h1>
             <h2 className="pt-2 text-xl text-white">
               Relive all your gaming adventures in replay, with no limits!
             </h2>
@@ -49,10 +52,10 @@ export function Index() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <ButtonTypes className="mb-3" onClick={refetch}>
+              <Button className="mb-3" onClick={refetch}>
                 Continue
-              </ButtonTypes>
-              <p className="text-sm text-white">
+              </Button>
+              <p className="px-3 pt-5 text-xs text-white sm:px-9">
                 Get 12 months of Lime+ at the price of 10 with an annual subscription!
                 Save compared to a monthly subscription over the course of a year.
               </p>

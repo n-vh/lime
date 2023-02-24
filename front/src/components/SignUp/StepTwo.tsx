@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { ButtonTypes } from '../ButtonTypes';
+import { Button } from '../Button';
 
 interface Props {
   username: string;
@@ -31,9 +31,9 @@ export function StepTwo({ username, setUsername, setStep }: Props) {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <ButtonTypes className="mb-3" onClick={() => setStep(3)}>
+          <Button className="mb-3" onClick={() => setStep(3)}>
             Continue
-          </ButtonTypes>
+          </Button>
         </div>
       </div>
     </div>

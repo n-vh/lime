@@ -1,5 +1,3 @@
-import React from 'react';
-
 type User = {
   name: string;
 };
@@ -13,7 +11,7 @@ type Props =
       profile: User;
     };
 
-function SignInButton(props: Props) {
+export function Button(props: Props) {
   return (
     <div>
       {props.authenticated ? (
@@ -29,5 +27,3 @@ function SignInButton(props: Props) {
     </div>
   );
 }
-
-export default SignInButton;

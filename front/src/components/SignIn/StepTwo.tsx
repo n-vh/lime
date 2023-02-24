@@ -2,12 +2,17 @@ import { Dispatch, SetStateAction } from 'react';
 import { Button } from '../Button';
 
 interface Props {
+  email: string;
   password: string;
   setPassword: Dispatch<SetStateAction<string>>;
   setStep: Dispatch<SetStateAction<number>>;
 }
 
-export function StepFour({ password, setPassword, setStep }: Props) {
+export function StepTwo({ email, password, setPassword, setStep }: Props) {
+  const onClick = () => {
+    setStep(3);
+  };
+
   return (
     <div className="relative items-center rounded-2xl border-2 border-[#52525B] bg-[#3F3F46]">
       <div className="place-items-center px-6 py-6 lg:px-8">
@@ -36,7 +41,7 @@ export function StepFour({ password, setPassword, setStep }: Props) {
           <div className="py-3 px-1 text-sm text-white">
             Use a minimum of 6 characters, including a number or special character.
           </div>
-          <Button className="mb-3" onClick={() => setStep(5)}>
+          <Button className="mb-3" onClick={onClick}>
             Continue
           </Button>
         </div>

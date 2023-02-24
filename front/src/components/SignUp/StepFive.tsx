@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect } from 'react';
-import { ButtonTypes } from '../ButtonTypes';
+import { Button } from '../Button';
 import { useFetch } from '~/hooks/useFetch';
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
   terms: boolean;
   password: string;
   payment: boolean;
+  setStep: Dispatch<SetStateAction<number>>;
   setPayment: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -17,6 +18,7 @@ export function StepFive({
   terms,
   password,
   payment,
+  setStep,
   setPayment,
 }: Props) {
   const { data, refetch } = useFetch('http://localhost:6543/signup', {
@@ -34,6 +36,7 @@ export function StepFive({
   const onSubscribe = () => {
     // todo payment system
     setPayment(true);
+    setStep(6);
 
     if (email && username && terms && password && payment) {
       refetch();
@@ -128,7 +131,7 @@ export function StepFive({
           choose. Cancellation is possible at any time and takes effect at the end of the
           billing period. Months or years already started cannot be refunded or credited.
         </div>
-        <ButtonTypes onClick={onSubscribe}>Accept and Subscribe</ButtonTypes>
+        <Button onClick={onSubscribe}>Accept and Subscribe</Button>
       </div>
     </div>
   );

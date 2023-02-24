@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 import { Navbar } from '~/components/Navbar';
-import { Player } from '~/components/PlayerComp';
+import { Plyr } from '~/components/Plyr';
 
-export function PlayerPage() {
+export function Player() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleDropdownClick = () => {
@@ -16,7 +15,7 @@ export function PlayerPage() {
         <Navbar />
         <div className="pt-24 md:my-8 md:px-12 xl:px-80">
           <div className="z-0">
-            <Player />
+            <Plyr />
           </div>
         </div>
         <div>
