@@ -62,15 +62,11 @@ export function Home() {
         </div>
       </div>
 
-      <Divider />
+      <Divider placeholder="Top Trending" />
       <Carousel />
-      <Divider />
+      <Divider placeholder="Categories" />
       <Carousel />
-      <Divider />
-      <Carousel />
-      <Divider />
-      <Carousel />
-      <Divider />
+      <Divider placeholder="Replays Of..." />
       <Carousel />
     </>
   );
